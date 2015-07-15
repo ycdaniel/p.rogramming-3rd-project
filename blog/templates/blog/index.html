@@ -24,103 +24,21 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
+        {% for post in post_list %}
+            <div class="col-sm-6">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
+                            <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ post.title }}</h4>
+                        {{ post.content|linebreaks }}
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="media">
-                <div class="media-left">
-                    <a href="http://blog.naver.com/wabiz?Redirect=Log&logNo=220416507486">
-                        <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">일본여행 - 오사카자유여행 후기</h4>
-                    <p>일본여행 - 오사카자유여행 후기 방학을 맞아 친구들과 오사카로 일본자유여행을 다녀왔습니다. 알뜰한 일본여행을 위해 경비 절약을 위해 비행기는 저가항공을 탔습니다...</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
