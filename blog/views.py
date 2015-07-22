@@ -15,3 +15,6 @@ def detail(request, pk):
         'post': post,
     })
 
+
+def about(request):
+    return render(request, "blog/about.html")
