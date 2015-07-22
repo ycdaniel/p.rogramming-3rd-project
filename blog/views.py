@@ -18,3 +18,12 @@ def detail(request, pk):
 
 def about(request):
     return render(request, "blog/about.html")
+
+
+def sum_xy(request, x, y):
+    result = int(x) + int(y)
+    return render(request, "blog/sum_xy.html", {
+        'x': x,
+        'y': y,
+        'result': result,
+    })
