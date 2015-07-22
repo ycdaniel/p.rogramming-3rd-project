@@ -26,6 +26,22 @@ python manage.py createsuperuser
 python manage.py startapp blog
 ```
 
+## settings 의 INSTALLED_APPS 에 blog 앱 추가
+```python
+# project3/settings.py
+INSTALLED_APPS = (
+    # (중략) ...
+    'blog',
+)
+```
+
+INSTALLED_APPS : django 프로젝트 내 관리대상 app 목록
+
+ * 여기에 포함되지 않으면 ...
+  * 마이그레이션 대상에서 제외
+  * 차후 배울 templates, static loader 대상에서도 제외
+  * urls/view 라우팅은 project/urls.py 에서 직접 라우팅하기 때문에, INSTALLED_APPS 에 포함되지 않아도 가능함.
+
 ## blog 앱, Post 모델 생성
 ```python
 # blog/models.py 파일
