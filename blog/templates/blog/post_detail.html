@@ -29,6 +29,10 @@
                     {{ post.title }}
                 </div>
                 <div class="panel-body">
+                    {% if post.image %}
+                        <p><img src="{{ post.image.url }}" /></p>
+                    {% endif %}
+
                     {{ post.content|linebreaksbr }}
                 </div>
             </div>
