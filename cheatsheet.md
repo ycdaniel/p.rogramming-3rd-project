@@ -184,9 +184,3 @@ td {
 ```
 
 이제 링크만 눌러도, 각 post 내용을 즉시 확인할 수 있습니다.
-
----
-
-# TODO
- * bootstrap, template inheritance
- * html form, request.GET, request.POST, django form

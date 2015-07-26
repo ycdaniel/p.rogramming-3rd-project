@@ -1,13 +1,15 @@
 from django.core.files import File
 from django.db import models
 from django.db.models.signals import pre_save
+from blog.utils import random_name_upload_to
 from blog.utils import square_image, thumbnail
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    image = models.ImageField(blank=True, null=True)
+    image = models.ImageField(blank=True, null=True,
+                              upload_to=random_name_upload_to)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
