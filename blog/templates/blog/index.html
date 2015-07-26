@@ -1,35 +1,30 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf8" />
-<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css" />
+{% extends "blog/layout.html" %}
+
+{% block extra_head %}
 <style>
-    body {
-        padding-top: 80px;
-    }
+#post_list .media {
+    margin-bottom: 10px;
+}
+#post_list .media-object {
+    width: 100px;
+    height: 100px;
+}
 </style>
-<title>???의 여행 블로그</title>
-</head>
-<body>
+{% endblock %}
 
-<div class="navbar navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">???의 여행 블로그</a>
-        </div>
-    </div>
-</div>
-
+{% block content %}
 <div class="container">
-    <div class="row">
-
+    <div class="row" id="post_list">
         {% for post in post_list %}
             <div class="col-sm-6">
                 <div class="media">
                     <div class="media-left">
                         <a href="/blog/{{ post.id }}/">
-                            <img class="media-object" src="http://tv01.search.naver.net/ugc?t=r80&q=http://blogfiles.naver.net/20150710_57/wabiz_1436531660186xP89Q_JPEG/%BF%C0%BB%E7%C4%AB%C7%E0_%BA%F1%C7%E0%B1%E2_%BE%C8.JPG#900x675" style="max-width: 100px;" />
+                            {% if post.image %}
+                                <img class="media-object" src="{{ post.image.url }}" alt="{{ post.title }}" />
+                            {% else %}
+                                <img class="media-object" src="" alt="이미지없음" />
+                            {% endif %}
                         </a>
                     </div>
                     <div class="media-body">
@@ -41,6 +36,4 @@
         {% endfor %}
     </div>
 </div>
-
-</body>
-</html>
+{% endblock %}

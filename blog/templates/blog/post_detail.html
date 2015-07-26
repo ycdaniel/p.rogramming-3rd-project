@@ -1,46 +1,23 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf8" />
-<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css" />
-<style>
-    body {
-        padding-top: 80px;
-    }
-</style>
-<title>???의 여행 블로그</title>
-</head>
-<body>
+{% extends "blog/layout.html" %}
 
-<div class="navbar navbar-fixed-top">
+{% block content %}
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">???의 여행 블로그</a>
-        </div>
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        {{ post.title }}
+                    </div>
+                    <div class="panel-body">
+                        {% if post.image %}
+                            <p><img src="{{ post.image.url }}" /></p>
+                        {% endif %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    {{ post.title }}
+                        {{ post.content|linebreaksbr }}
+                    </div>
                 </div>
-                <div class="panel-body">
-                    {% if post.image %}
-                        <p><img src="{{ post.image.url }}" /></p>
-                    {% endif %}
-
-                    {{ post.content|linebreaksbr }}
-                </div>
+                <a href="/blog/">글목록</a>
             </div>
-
-            <a href="/blog/">글목록</a>
         </div>
     </div>
-</div>
-
-</html>
-
+{% endblock %}
