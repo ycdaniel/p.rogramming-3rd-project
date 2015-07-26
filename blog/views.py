@@ -1,5 +1,4 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from blog.models import Post
 
 
@@ -11,11 +10,7 @@ def index(request):
 
 
 def detail(request, pk):
-    try:
-        post = Post.objects.get(pk=pk)
-    except Post.DoesNotExist:
-        raise Http404
-
+    post = get_object_or_404(Post, pk=pk)
     return render(request, "blog/post_detail.html", {
         'post': post,
     })
