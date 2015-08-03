@@ -2,6 +2,7 @@ from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_exempt
 from blog.models import Post
+from blog.forms import PostForm
 
 
 def index(request):
@@ -19,22 +20,20 @@ def new(request):
     print("request.FILES = {}".format(request.FILES))
 
     if request.method == 'POST':
-        if 'title' not in request.POST:
-            return HttpResponseBadRequest('제목을 지정해주세요.')
-        if not request.POST['title']:
-            return HttpResponseBadRequest('제목이 비었어요.')
+        form = PostForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+            post = Post(title=title, content=content)
+            post.save()
 
-        if 'content' not in request.POST:
-            return HttpResponseBadRequest('내용을 지정해주세요.')
-        if not request.POST['content']:
-            return HttpResponseBadRequest('내용이 비었어요.')
+            form = PostForm()  # form clear
+    else:
+        form = PostForm()
 
-        title = request.POST['title']
-        content = request.POST['content']
-        post = Post(title=title, content=content)
-        post.save()
-
-    return render(request, "blog/form.html")
+    return render(request, "blog/form.html", {
+        'form': form,
+    })
 
 
 def detail(request, pk):
