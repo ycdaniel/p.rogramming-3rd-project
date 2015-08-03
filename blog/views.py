@@ -1,7 +1,7 @@
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from blog.models import Post
-from blog.forms import PostForm
+from blog.forms import PostForm, JokeSignupForm
 
 
 def index(request):
@@ -57,3 +57,18 @@ def sum_xy(request, x, y):
         'y': y,
         'result': result,
     })
+
+
+def signup_joke(request):
+    if request.method == 'POST':
+        form = JokeSignupForm(request.POST)
+        if form.is_valid():
+            print('form.cleaned_data = {}'.format(form.cleaned_data))
+            return redirect('blog.views.index')
+    else:
+        form = JokeSignupForm()
+
+    return render(request, "blog/form.html", {
+        'form': form,
+    })
+
