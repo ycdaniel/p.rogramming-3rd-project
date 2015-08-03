@@ -12,7 +12,6 @@ def index(request):
     })
 
 
-@csrf_exempt
 def new(request):
     print("---- new ----")
     print("request.GET = {}".format(request.GET))
