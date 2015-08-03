@@ -1,6 +1,5 @@
 from django.http import HttpResponseBadRequest
-from django.shortcuts import get_object_or_404, render
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404, redirect, render
 from blog.models import Post
 from blog.forms import PostForm
 
@@ -25,8 +24,7 @@ def new(request):
             content = form.cleaned_data['content']
             post = Post(title=title, content=content)
             post.save()
-
-            form = PostForm()  # form clear
+            return redirect('blog.views.index')
     else:
         form = PostForm()
 
